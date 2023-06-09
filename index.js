@@ -32,7 +32,11 @@ async function run() {
         const classCollection = client.db('sunshineDb').collection('class');
         const userCollection = client.db('sunshinwDb').collection('users');
 
-
+        //getting classes
+        app.get('/class', async (req, res) => {
+            const classes = await classCollection.find().toArray();
+            res.send(classes);
+        });
 
 
 
