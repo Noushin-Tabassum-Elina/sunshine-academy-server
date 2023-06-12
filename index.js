@@ -278,7 +278,7 @@ async function run() {
         // instructor api
 
         // add class:
-        
+
         app.post("/classes", verifyJWT, verifyInstructor, async (req, res) => {
 
             const newClass = req.body;
@@ -288,11 +288,13 @@ async function run() {
         })
 
         // my classes:
+
         app.get("/myclasses/:email", verifyJWT, verifyInstructor, async (req, res) => {
 
             const email = req.params.email;
 
             const query = { instructorEmail: email };
+            
             const result = await classCollection.find(query).toArray();
             res.send(result);
 
