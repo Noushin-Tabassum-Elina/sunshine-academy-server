@@ -303,7 +303,7 @@ async function run() {
         // update myclasses:
 
         app.patch("/myclasses/:id", verifyJWT, verifyInstructor, async (req, res) => {
-            
+
             const id = req.params.id;
             const updatedInfo = req.body;
 
@@ -326,7 +326,8 @@ async function run() {
 
         //student api
 
-        // add selcted class
+        // add selected class
+        
         app.post("/selectedClass", async (req, res) => {
 
             const selectedClass = req.body;
