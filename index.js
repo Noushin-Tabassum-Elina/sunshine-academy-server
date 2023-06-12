@@ -358,7 +358,7 @@ async function run() {
         })
 
         // delete seleted class
-        
+
         app.delete("/selectedClass/:id", async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) }
@@ -380,7 +380,9 @@ async function run() {
         //-------- payment apis---------:
 
         // creating payment intent
+
         app.post('/create-payment-intent', verifyJWT, async (req, res) => {
+            
             const { price } = req.body;
             const amount = parseInt(price * 100);
             const paymentIntent = await stripe.paymentIntents.create({
