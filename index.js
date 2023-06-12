@@ -278,6 +278,7 @@ async function run() {
         // instructor api
 
         // add class:
+        
         app.post("/classes", verifyJWT, verifyInstructor, async (req, res) => {
 
             const newClass = req.body;
