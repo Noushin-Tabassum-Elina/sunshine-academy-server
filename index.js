@@ -294,14 +294,16 @@ async function run() {
             const email = req.params.email;
 
             const query = { instructorEmail: email };
-            
+
             const result = await classCollection.find(query).toArray();
             res.send(result);
 
         })
 
         // update myclasses:
+
         app.patch("/myclasses/:id", verifyJWT, verifyInstructor, async (req, res) => {
+            
             const id = req.params.id;
             const updatedInfo = req.body;
 
