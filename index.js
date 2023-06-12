@@ -239,7 +239,7 @@ async function run() {
         // deny course:
 
         app.patch("/classes/deny/:id", verifyJWT, verifyAdmin, async (req, res) => {
-            
+
             const id = req.params.id;
             const query = { _id: new ObjectId(id) }
 
@@ -256,12 +256,12 @@ async function run() {
 
 
         // send Feedback:
+
         app.patch("/classes/feedback/:id", verifyJWT, verifyAdmin, async (req, res) => {
             const id = req.params.id;
             const feedback = req.body;
 
             const query = { _id: new ObjectId(id) }
-
 
             const updatedDoc = {
                 $set: {
