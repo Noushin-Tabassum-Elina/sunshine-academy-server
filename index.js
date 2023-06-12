@@ -327,7 +327,7 @@ async function run() {
         //student api
 
         // add selected class
-        
+
         app.post("/selectedClass", async (req, res) => {
 
             const selectedClass = req.body;
@@ -337,6 +337,7 @@ async function run() {
         })
 
         // get selected class
+
         app.get("/selectedClass", verifyJWT, async (req, res) => {
 
             const email = req.query.email;
@@ -357,6 +358,7 @@ async function run() {
         })
 
         // delete seleted class
+        
         app.delete("/selectedClass/:id", async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) }
