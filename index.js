@@ -194,7 +194,7 @@ async function run() {
         // make instructor:
 
         app.patch("/users/instructor/:id", verifyJWT, verifyAdmin, async (req, res) => {
-            
+
             const id = req.params.id;
 
             const query = { _id: new ObjectId(id) }
@@ -219,7 +219,9 @@ async function run() {
         })
 
         // approved course:
+
         app.patch("/classes/approved/:id", verifyJWT, verifyAdmin, async (req, res) => {
+            
             const id = req.params.id;
             const query = { _id: new ObjectId(id) }
 
